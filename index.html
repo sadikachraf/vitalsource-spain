@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vital Source Nutrition - Gominolas premium para el equilibrio femenino. Envío discreto en España y pago contra reembolso." />
+  <title>Vital Source Nutrition | Gominolas para el Equilibrio Femenino</title>
+
+  <!-- =========================================================
+       PIXELS / TRACKING PLACEHOLDERS
+       We will add Meta Pixel, TikTok Pixel, GA4 and Google Sheet later.
+       ========================================================= -->
+  <script>
+    window.VITAL_CONFIG = {
+      SHEET_URL: '', // Add Google Sheet Web App URL later
+      META_PIXEL_ID: '',
+      TIKTOK_PIXEL_ID: '',
+      GA4_ID: ''
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --green:#073f35;
+      --green-2:#0d5a4d;
+      --green-soft:#e8f4ef;
+      --pink:#f7c9d8;
+      --pink-2:#ffe9f0;
+      --cream:#fff6e8;
+      --cream-2:#fffaf2;
+      --yellow:#ffc928;
+      --orange:#ff6a2b;
+      --text:#13231f;
+      --muted:#687873;
+      --border:#eadfd0;
+      --white:#fff;
+      --danger:#c62828;
+      --shadow:0 18px 55px rgba(7,63,53,.14);
+      --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--cream-2);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block;height:auto}
+    a{text-decoration:none;color:inherit}
+    button,input,select,textarea{font-family:inherit}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+    .serif{font-family:"Playfair Display",Georgia,serif}
+    .hide{display:none!important}
+
+    .urgency{background:linear-gradient(90deg,#7c1515,#d12323,#7c1515);color:#fff;text-align:center;font-weight:800;font-size:13px;padding:9px 12px;letter-spacing:.01em;position:relative;z-index:50}
+    .urgency span{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
+    .urgency b{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);padding:3px 9px;border-radius:999px}
+
+    header{position:sticky;top:0;background:rgba(255,250,242,.9);backdrop-filter:blur(12px);z-index:45;border-bottom:1px solid rgba(234,223,208,.8)}
+    .header-inner{height:68px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}
+    .brand img{width:150px;max-height:52px;object-fit:contain}
+    .header-trust{display:flex;gap:16px;color:var(--green);font-size:12px;font-weight:800;white-space:nowrap}
+    .header-cta{background:var(--green);color:#fff;font-weight:900;border:0;border-radius:999px;padding:12px 18px;box-shadow:0 10px 24px rgba(7,63,53,.18);cursor:pointer;white-space:nowrap}
+
+    .ticker{background:var(--green);color:#fff;overflow:hidden;height:36px;display:flex;align-items:center}
+    .ticker-track{display:flex;width:max-content;animation:marquee 42s linear infinite;gap:28px;white-space:nowrap;font-size:12px;font-weight:700;opacity:.95}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .ticker-item{display:flex;align-items:center;gap:7px}
+    .dot{width:7px;height:7px;border-radius:50%;background:#31d17b;display:inline-block;animation:pulse 1.2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+    .hero{padding:34px 0 54px;background:
+      radial-gradient(circle at 20% 10%,rgba(247,201,216,.42),transparent 32%),
+      radial-gradient(circle at 80% 12%,rgba(255,201,40,.18),transparent 30%),
+      linear-gradient(180deg,var(--cream-2),#fff)}
+    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:start}
+    .gallery{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);position:sticky;top:92px}
+    .main-image{background:linear-gradient(180deg,#fff5eb,#fff);border-radius:18px;min-height:470px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border:1px solid #f1e5d3}
+    .main-image img{width:100%;height:100%;max-height:520px;object-fit:contain;transition:opacity .18s ease}
+    .badge-top{position:absolute;top:14px;left:14px;background:#fff;color:var(--green);font-weight:900;font-size:12px;border-radius:999px;padding:8px 12px;box-shadow:0 8px 22px rgba(0,0,0,.1);display:flex;align-items:center;gap:7px}
+    .thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px}
+    .thumb{border:2px solid transparent;border-radius:14px;overflow:hidden;background:#fff6ef;cursor:pointer;aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:3px}
+    .thumb.active{border-color:var(--green)}
+    .thumb img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+
+    .hero-copy{padding-top:8px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--pink-2);color:var(--green);border:1px solid #f1c7d5;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px}
+    h1{font-family:"Playfair Display",Georgia,serif;color:var(--green);font-size:clamp(34px,5vw,62px);line-height:.98;margin-bottom:12px;letter-spacing:-.03em}
+    .sub{font-size:18px;color:#374844;margin-bottom:18px;max-width:620px}
+    .sub strong{color:var(--green)}
+    .rating{display:flex;align-items:center;gap:10px;margin:12px 0 16px;flex-wrap:wrap}
+    .stars{color:#ffb400;letter-spacing:1px;font-size:16px}
+    .rating span{font-size:13px;color:var(--muted);font-weight:700}
+    .hero-bullets{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}
+    .hero-bullet{background:#fff;border:1px solid var(--border);border-radius:15px;padding:12px 13px;display:flex;gap:9px;align-items:flex-start;font-size:13px;font-weight:800;color:#263b36;box-shadow:0 8px 22px rgba(7,63,53,.05)}
+    .check{width:21px;height:21px;min-width:21px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900}
+
+    .price-card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:18px;box-shadow:var(--shadow);margin-top:18px}
+    .price-top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:12px;flex-wrap:wrap}
+    .price{font-size:42px;font-weight:900;color:var(--green);line-height:1}.old{text-decoration:line-through;color:#9daaa5;font-size:17px;font-weight:700}.save{background:#fff0c2;color:#7d4b00;font-weight:900;font-size:12px;border-radius:999px;padding:6px 10px}
+    .stock{display:flex;align-items:center;gap:7px;color:#8a1f1f;font-size:13px;font-weight:900;margin-bottom:14px}.stock .dot{background:#d92323}
+
+    .offers{display:grid;gap:10px;margin:12px 0 16px}.offer{position:relative;border:2px solid var(--border);border-radius:16px;padding:14px 12px;display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:center;cursor:pointer;background:#fff;transition:.18s}.offer:hover{border-color:var(--green)}.offer.active{border-color:var(--green);background:var(--green-soft);box-shadow:0 10px 26px rgba(7,63,53,.1)}.radio{width:20px;height:20px;border:2px solid #a8b8b3;border-radius:50%;position:relative}.offer.active .radio{border-color:var(--green)}.offer.active .radio:after{content:"";position:absolute;inset:4px;background:var(--green);border-radius:50%}.offer-title{font-weight:900;color:var(--green);font-size:14px}.offer-desc{font-size:12px;color:var(--muted);font-weight:700}.offer-price{font-weight:900;color:var(--green);font-size:18px;text-align:right}.offer-badge{position:absolute;top:-10px;right:12px;background:var(--orange);color:#fff;font-size:10px;font-weight:900;border-radius:999px;padding:3px 9px}
+
+    form{display:grid;gap:10px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}input{width:100%;border:1.6px solid #ded2c2;border-radius:13px;background:#fff;padding:13px 14px;font-size:16px;outline:none;color:var(--text)}input:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(7,63,53,.09)}input.error{border-color:#d92323;background:#fffafa}.submit{border:0;background:linear-gradient(135deg,var(--orange),#ff8d39);color:#fff;border-radius:999px;padding:17px 18px;font-size:17px;font-weight:900;cursor:pointer;box-shadow:0 15px 30px rgba(255,106,43,.26);animation:ctaPulse 2s ease-in-out infinite}.submit:disabled{opacity:.65;cursor:not-allowed;animation:none}@keyframes ctaPulse{0%,100%{transform:translateY(0);box-shadow:0 15px 30px rgba(255,106,43,.26)}50%{transform:translateY(-1px);box-shadow:0 18px 42px rgba(255,106,43,.38)}}.form-note{font-size:12px;color:var(--muted);font-weight:700;text-align:center}.trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px}.trust-chip{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:8px;text-align:center;font-size:11px;font-weight:900;color:var(--green)}
+
+    .section{padding:68px 0}.section.alt{background:#fff}.section.green{background:var(--green);color:#fff}.section-title{text-align:center;max-width:820px;margin:0 auto 34px}.section-title .kicker{color:var(--orange);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px}.section-title h2{font-family:"Playfair Display",Georgia,serif;color:var(--green);font-size:clamp(30px,4vw,50px);line-height:1.04;margin-bottom:12px}.green .section-title h2{color:#fff}.section-title p{color:var(--muted);font-size:16px}.green .section-title p{color:rgba(255,255,255,.75)}
+
+    .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.problem-card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:24px;box-shadow:var(--shadow)}.problem-card h3{font-size:26px;color:var(--green);margin-bottom:12px}.problem-list{display:grid;gap:11px;margin-top:16px}.problem-item{display:flex;gap:10px;align-items:flex-start;background:var(--cream-2);border:1px solid var(--border);border-radius:14px;padding:12px;font-weight:800;font-size:14px}.problem-visual{position:relative}.problem-visual img{border-radius:24px;box-shadow:var(--shadow);width:100%;object-fit:cover}.floating-card{position:absolute;left:18px;bottom:18px;background:#fff;border-radius:18px;padding:16px;box-shadow:0 18px 45px rgba(0,0,0,.16);max-width:330px}.floating-card b{color:var(--green)}.floating-card p{font-size:13px;color:var(--muted);margin-top:4px;font-weight:700}
+
+    .ugc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.ugc{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(7,63,53,.07)}.ugc img{width:100%;aspect-ratio:1;object-fit:cover}.ugc-caption{padding:10px 11px;font-size:12px;font-weight:800;color:var(--green);display:flex;align-items:center;justify-content:space-between;gap:8px}.ugc-caption span{color:#ffb400;white-space:nowrap}
+
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{background:#fff;border:1px solid var(--border);border-radius:22px;padding:24px;box-shadow:0 12px 35px rgba(7,63,53,.06)}.feature-icon{width:48px;height:48px;border-radius:15px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:15px}.feature h3{color:var(--green);font-size:19px;margin-bottom:8px}.feature p{color:var(--muted);font-size:14px;font-weight:600}
+
+    .image-strip{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}.image-strip img{border-radius:22px;box-shadow:var(--shadow);border:1px solid var(--border);width:100%;height:100%;object-fit:cover;background:#fff}
+
+    .bundle{background:#fff;border:1px solid var(--border);border-radius:28px;padding:20px;box-shadow:var(--shadow);display:grid;grid-template-columns:.95fr 1.05fr;gap:24px;align-items:center}.bundle img{border-radius:20px}.bundle-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.bundle-option{border:2px solid var(--border);border-radius:20px;padding:18px 12px;text-align:center;background:#fff;position:relative;cursor:pointer;transition:.18s}.bundle-option.best{border-color:var(--green);background:var(--green-soft);transform:scale(1.03)}.bundle-option .tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;border-radius:999px;padding:4px 12px;font-size:10px;font-weight:900;white-space:nowrap}.bundle-option h3{font-size:15px;color:var(--green);margin-bottom:5px}.bundle-option .bundle-price{font-size:30px;color:var(--green);font-weight:900}.bundle-option .per{font-size:12px;color:var(--muted);font-weight:800}.bundle-option .mini{margin-top:12px;font-size:12px;font-weight:800;color:var(--green)}
+
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.review{background:#fff;border:1px solid var(--border);border-radius:22px;padding:20px;box-shadow:0 12px 34px rgba(7,63,53,.06)}.review .stars{font-size:14px;margin-bottom:10px}.review p{font-size:14px;color:#344641;font-weight:600}.review-author{margin-top:16px;display:flex;align-items:center;justify-content:space-between;gap:8px}.review-author b{color:var(--green);font-size:13px}.review-author span{font-size:11px;color:var(--muted);font-weight:800}.verified{background:#e7fff5;color:#08704c;border:1px solid #b7f2d8;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:900}
+
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{background:#fff;border:1px solid var(--border);border-radius:22px;padding:22px;text-align:center}.step-num{width:46px;height:46px;margin:0 auto 12px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:19px}.step h3{color:var(--green);font-size:18px;margin-bottom:6px}.step p{font-size:14px;color:var(--muted);font-weight:600}
+
+    .faq{max-width:820px;margin:0 auto;display:grid;gap:10px}.faq-item{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden}.faq-q{padding:17px 18px;display:flex;justify-content:space-between;gap:12px;align-items:center;font-weight:900;color:var(--green);cursor:pointer}.faq-q span:last-child{width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}.faq-a{display:none;padding:0 18px 17px;color:var(--muted);font-weight:600;font-size:14px}.faq-item.open .faq-a{display:block}.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}
+
+    .bottom-form{max-width:740px;margin:0 auto;background:#fff;border-radius:28px;box-shadow:var(--shadow);border:1px solid var(--border);overflow:hidden}.bottom-head{background:var(--green);color:#fff;padding:18px;text-align:center}.bottom-head h2{font-size:26px}.bottom-body{padding:22px}
+
+    footer{background:#042b25;color:rgba(255,255,255,.7);padding:34px 0 90px;text-align:center}footer img{width:145px;margin:0 auto 12px}footer p{font-size:12px;max-width:760px;margin:0 auto 10px}.footer-links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,.55);font-weight:700;margin-top:12px}
+
+    .sticky-mobile{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--border);box-shadow:0 -10px 30px rgba(0,0,0,.12);padding:10px 12px}.sticky-inner{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.sticky-price{font-weight:900;color:var(--green);font-size:15px}.sticky-sub{font-size:11px;color:var(--muted);font-weight:800}.sticky-btn{background:var(--orange);color:#fff;border:0;border-radius:999px;padding:12px 16px;font-size:13px;font-weight:900;white-space:nowrap}
+
+    .success-modal{position:fixed;inset:0;background:rgba(4,43,37,.78);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}.success-box{background:#fff;border-radius:26px;padding:30px 22px;max-width:440px;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,.32)}.success-icon{width:72px;height:72px;background:#e8fff6;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;font-size:34px}.success-box h3{color:var(--green);font-size:24px;margin-bottom:8px}.success-box p{color:var(--muted);font-size:14px;font-weight:600}.order-ref{display:inline-block;margin-top:12px;background:var(--green-soft);color:var(--green);border-radius:999px;padding:7px 13px;font-weight:900;font-size:12px}.close-success{margin-top:18px;border:0;background:var(--green);color:#fff;border-radius:999px;padding:12px 18px;font-weight:900;cursor:pointer}
+
+    @media(max-width:980px){.hero-grid,.problem-grid,.bundle{grid-template-columns:1fr}.gallery{position:relative;top:auto}.main-image{min-height:auto}.header-trust{display:none}.ugc-grid{grid-template-columns:repeat(2,1fr)}.feature-grid,.reviews,.steps{grid-template-columns:1fr}.image-strip{grid-template-columns:1fr}.bundle-options{grid-template-columns:1fr}.bundle-option.best{transform:none}.hero-bullets{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.trust-row{grid-template-columns:1fr}.section{padding:54px 0}}
+    @media(max-width:620px){.urgency{font-size:11px}.header-inner{height:58px}.brand img{width:120px}.header-cta{padding:10px 12px;font-size:12px}.hero{padding:22px 0 38px}h1{font-size:38px}.sub{font-size:15px}.gallery{padding:10px;border-radius:18px}.thumbs{display:flex;overflow-x:auto;padding-bottom:4px}.thumb{min-width:68px}.price-card{padding:14px}.price{font-size:34px}.ugc-grid{gap:8px}.ugc-caption{font-size:10px}.floating-card{position:static;margin-top:12px}.sticky-mobile{display:block}.ticker{height:32px}.ticker-track{font-size:11px}.section-title h2{font-size:33px}.section-title p{font-size:14px}.feature,.review,.step,.problem-card{padding:18px}}
+  </style>
+</head>
+<body>
+  <div class="urgency"><span>🔥 Oferta especial de hoy <b>Stock limitado</b> 🚚 Envío discreto en España · Pago contra reembolso</span></div>
+
+  <header>
+    <div class="wrap header-inner">
+      <a class="brand" href="#top"><img src="images/logo.webp" alt="Vital Source Nutrition"></a>
+      <div class="header-trust">
+        <span>💵 Pago al recibir</span><span>📦 Envío discreto</span><span>⭐ 4.8/5</span>
+      </div>
+      <button class="header-cta" onclick="scrollToOrder()">Pedir ahora</button>
+    </div>
+  </header>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="dot"></span>Laura de Madrid pidió 2 packs</span>
+      <span class="ticker-item"><span class="dot"></span>Más de 500 unidades vendidas en nuestro lanzamiento anterior</span>
+      <span class="ticker-item"><span class="dot"></span>Envío discreto · sin texto sensible en el paquete</span>
+      <span class="ticker-item"><span class="dot"></span>Ana de Valencia pidió 3 packs</span>
+      <span class="ticker-item"><span class="dot"></span>Pago contra reembolso disponible</span>
+      <span class="ticker-item"><span class="dot"></span>Laura de Madrid pidió 2 packs</span>
+      <span class="ticker-item"><span class="dot"></span>Más de 500 unidades vendidas en nuestro lanzamiento anterior</span>
+      <span class="ticker-item"><span class="dot"></span>Envío discreto · sin texto sensible en el paquete</span>
+      <span class="ticker-item"><span class="dot"></span>Ana de Valencia pidió 3 packs</span>
+      <span class="ticker-item"><span class="dot"></span>Pago contra reembolso disponible</span>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="gallery">
+          <div class="main-image">
+            <div class="badge-top"><span class="dot"></span> #1 Bestseller en TikTok</div>
+            <img id="mainProductImage" src="images/product_transparent.webp" alt="Vital Source Feminine Balance Gummies">
+          </div>
+          <div class="thumbs">
+            <button class="thumb active" onclick="setMainImage(this,'images/product_transparent.webp')"><img src="images/product_transparent.webp" alt="Producto Vital Source"></button>
+            <button class="thumb" onclick="setMainImage(this,'images/1.webp')"><img src="images/1.webp" alt="30 porciones"></button>
+            <button class="thumb" onclick="setMainImage(this,'images/2.webp')"><img src="images/2.webp" alt="Pack ahorro"></button>
+            <button class="thumb" onclick="setMainImage(this,'images/r4.webp')"><img src="images/r4.webp" alt="Gominolas reales"></button>
+            <button class="thumb" onclick="setMainImage(this,'images/7.webp')"><img src="images/7.webp" alt="Información nutricional"></button>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <div class="eyebrow">Rutina femenina discreta</div>
+          <h1>Frescura íntima y equilibrio femenino, en solo 2 gominolas al día</h1>
+          <p class="sub">Gominolas premium con <strong>SNZ 1969 probiótico, extracto de piña y vitamina C</strong>, creadas para apoyar tu flora íntima, el equilibrio del pH y tu confianza diaria.</p>
+          <div class="rating"><div class="stars">★★★★★</div><span>4.8/5 · Clientas verificadas · Producto viral en TikTok</span></div>
+
+          <div class="hero-bullets">
+            <div class="hero-bullet"><span class="check">✓</span><span>Apoya la frescura íntima diaria</span></div>
+            <div class="hero-bullet"><span class="check">✓</span><span>Ayuda al equilibrio del pH y la flora femenina</span></div>
+            <div class="hero-bullet"><span class="check">✓</span><span>Formato fácil: 2 gominolas al día</span></div>
+            <div class="hero-bullet"><span class="check">✓</span><span>Envío discreto + pago contra reembolso</span></div>
+          </div>
+
+          <div class="price-card" id="order">
+            <div class="price-top">
+              <div><span class="old">€79.99</span><div class="price" id="displayPrice">€39.99</div></div>
+              <div class="save">AHORRA HOY</div>
+            </div>
+            <div class="stock"><span class="dot"></span> Quedan pocas unidades disponibles para envío inmediato</div>
+
+            <div class="offers" role="radiogroup" aria-label="Seleccionar pack">
+              <div class="offer" data-qty="1" data-price="39.99" data-package="1 pack" onclick="selectOffer(this)">
+                <span class="radio"></span><div><div class="offer-title">1 Pack</div><div class="offer-desc">30 días · ideal para probar</div></div><div class="offer-price">€39.99</div>
+              </div>
+              <div class="offer active" data-qty="2" data-price="69.99" data-package="2 packs" onclick="selectOffer(this)">
+                <div class="offer-badge">MÁS POPULAR</div><span class="radio"></span><div><div class="offer-title">2 Packs</div><div class="offer-desc">60 días · mejor para rutina</div></div><div class="offer-price">€69.99</div>
+              </div>
+              <div class="offer" data-qty="3" data-price="89.99" data-package="3 packs" onclick="selectOffer(this)">
+                <div class="offer-badge">MEJOR VALOR</div><span class="radio"></span><div><div class="offer-title">3 Packs</div><div class="offer-desc">90 días · máximo ahorro</div></div><div class="offer-price">€89.99</div>
+              </div>
+            </div>
+
+            <form id="orderForm" onsubmit="submitOrder(event)">
+              <div class="form-row">
+                <input name="customer_name" placeholder="Nombre completo" autocomplete="name" required>
+                <input name="customer_phone" placeholder="Teléfono" autocomplete="tel" required>
+              </div>
+              <div class="form-row">
+                <input name="city" placeholder="Ciudad" autocomplete="address-level2" required>
+                <input name="zip_code" placeholder="Código postal" autocomplete="postal-code" required>
+              </div>
+              <input name="customer_address" placeholder="Dirección completa" autocomplete="street-address" required>
+              <button class="submit" type="submit">Pedir ahora · Pago contra reembolso</button>
+              <div class="form-note">Te llamaremos para confirmar el pedido antes del envío. Sin pago online.</div>
+            </form>
+            <div class="trust-row"><div class="trust-chip">🚚 Envío discreto</div><div class="trust-chip">💵 Pago al recibir</div><div class="trust-chip">📞 Confirmación por llamada</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap problem-grid">
+        <div class="problem-card">
+          <div class="section-title" style="text-align:left;margin:0 0 18px"><div class="kicker">Para chicas que lo viven en silencio</div><h2>Cuando no te sientes fresca, tu confianza cambia.</h2><p>No es solo una rutina de bienestar. Es sentirte más cómoda contigo misma en el trabajo, el gym, una cita o durante tus días sensibles.</p></div>
+          <div class="problem-list">
+            <div class="problem-item"><span class="check">✓</span><span>Te preocupa el olor íntimo durante el día</span></div>
+            <div class="problem-item"><span class="check">✓</span><span>Sientes que tu equilibrio íntimo cambia antes o después de la regla</span></div>
+            <div class="problem-item"><span class="check">✓</span><span>Quieres una solución discreta, fácil y diaria</span></div>
+            <div class="problem-item"><span class="check">✓</span><span>No quieres cápsulas complicadas ni rutinas incómodas</span></div>
+          </div>
+        </div>
+        <div class="problem-visual"><img src="images/feminine.webp" alt="Vital Source Feminine Balance"><div class="floating-card"><b>60 gominolas · 30 porciones</b><p>Una rutina diaria con sabor a piña tropical, pensada para acompañarte todos los días.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-title"><div class="kicker">Fotos reales de clientas</div><h2>El tipo de producto que se compra en silencio… y se repite.</h2><p>Fotos UGC reales para mostrar el pouch, las gominolas y el formato diario.</p></div>
+        <div class="ugc-grid">
+          <div class="ugc"><img src="images/r1.webp" alt="Foto cliente Vital Source"><div class="ugc-caption">Pedido recibido <span>★★★★★</span></div></div>
+          <div class="ugc"><img src="images/r4.webp" alt="Gominolas Vital Source"><div class="ugc-caption">Gominolas reales <span>★★★★★</span></div></div>
+          <div class="ugc"><img src="images/r3.webp" alt="Foto real producto"><div class="ugc-caption">Rutina diaria <span>★★★★★</span></div></div>
+          <div class="ugc"><img src="images/r7.webp" alt="Pouch Vital Source"><div class="ugc-caption">Pack discreto <span>★★★★★</span></div></div>
+          <div class="ugc"><img src="images/r2.webp" alt="Close up Vital Source"><div class="ugc-caption">Producto verificado <span>★★★★★</span></div></div>
+          <div class="ugc"><img src="images/r5.webp" alt="Producto cliente"><div class="ugc-caption">Formato fácil <span>★★★★★</span></div></div>
+          <div class="ugc"><img src="images/r8.webp" alt="Producto sobre tela"><div class="ugc-caption">Uso diario <span>★★★★★</span></div></div>
+          <div class="ugc"><img src="images/r6.webp" alt="Etiqueta trasera"><div class="ugc-caption">Etiqueta original <span>★★★★★</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-title"><div class="kicker">Por qué funciona como rutina</div><h2>Fórmula pensada para frescura, pH y flora íntima.</h2><p>Una combinación simple: probiótico SNZ 1969, extracto de piña y vitamina C.</p></div>
+        <div class="feature-grid">
+          <div class="feature"><div class="feature-icon">🦠</div><h3>Probiótico SNZ 1969</h3><p>Apoya la flora femenina y el equilibrio interno como parte de una rutina diaria.</p></div>
+          <div class="feature"><div class="feature-icon">🍍</div><h3>Extracto de piña</h3><p>Aporta un enfoque fresco y tropical que encaja con la promesa de bienestar femenino.</p></div>
+          <div class="feature"><div class="feature-icon">✨</div><h3>Vitamina C</h3><p>Apoya el sistema inmune y el bienestar general, con una fórmula fácil de tomar.</p></div>
+        </div>
+        <div class="image-strip"><img src="images/4.webp" alt="Ingredientes Vital Source"><img src="images/5.webp" alt="Probióticos clínicamente estudiados"></div>
+      </div>
+    </section>
+
+    <section class="section green">
+      <div class="wrap">
+        <div class="section-title"><div class="kicker">Oferta limitada</div><h2>Cuanto más compras, más ahorras.</h2><p>La mayoría elige 2 packs para mantener la rutina durante más tiempo.</p></div>
+        <div class="bundle">
+          <img src="images/2.webp" alt="Cuanto más compres más ahorras">
+          <div>
+            <div class="bundle-options">
+              <div class="bundle-option" onclick="chooseBundle(1)"><h3>1 Pack</h3><div class="bundle-price">€39.99</div><div class="per">€39.99 / pack</div><div class="mini">30 días</div></div>
+              <div class="bundle-option best" onclick="chooseBundle(2)"><div class="tag">MÁS POPULAR</div><h3>2 Packs</h3><div class="bundle-price">€69.99</div><div class="per">€35 / pack</div><div class="mini">60 días</div></div>
+              <div class="bundle-option" onclick="chooseBundle(3)"><div class="tag">MEJOR AHORRO</div><h3>3 Packs</h3><div class="bundle-price">€89.99</div><div class="per">€29.99 / pack</div><div class="mini">90 días</div></div>
+            </div>
+            <button class="submit" style="margin-top:18px;width:100%" onclick="scrollToOrder()">Quiero pedir con pago contra reembolso</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-title"><div class="kicker">Detalles de la fórmula</div><h2>Información clara antes de pedir.</h2><p>Consulta beneficios visuales, fórmula limpia e información nutricional.</p></div>
+        <div class="image-strip"><img src="images/3.webp" alt="Beneficios Vital Source"><img src="images/6.webp" alt="Fórmula limpia Vital Source"></div>
+        <div class="image-strip"><img src="images/1.webp" alt="30 porciones Vital Source"><img src="images/7.webp" alt="Información nutricional Vital Source"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-title"><div class="kicker">Opiniones verificadas</div><h2>Mujeres que lo integraron en su rutina diaria.</h2><p>Reviews adaptadas para España con enfoque discreto, natural y real.</p></div>
+        <div class="reviews">
+          <div class="review"><div class="stars">★★★★★</div><p>“Lo pedí por curiosidad y ahora lo tomo cada mañana. Me gusta porque es fácil, discreto y sabe bien.”</p><div class="review-author"><div><b>Laura M.</b><br><span>Madrid</span></div><span class="verified">Verificado</span></div></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“Lo que más me gustó es que no parece medicina. Son gominolas y se integran fácil en la rutina.”</p><div class="review-author"><div><b>Claudia R.</b><br><span>Valencia</span></div><span class="verified">Verificado</span></div></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“El paquete llegó discreto y pude pagar al recibir. Pedí 2 packs porque salía mejor.”</p><div class="review-author"><div><b>Marta S.</b><br><span>Barcelona</span></div><span class="verified">Verificado</span></div></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“Para mí fue una compra muy íntima, así que agradecí mucho que el envío fuera discreto.”</p><div class="review-author"><div><b>Ana P.</b><br><span>Sevilla</span></div><span class="verified">Verificado</span></div></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“Me convenció el formato de 2 gominolas al día. Nada de cápsulas raras ni complicaciones.”</p><div class="review-author"><div><b>Paula G.</b><br><span>Málaga</span></div><span class="verified">Verificado</span></div></div>
+          <div class="review"><div class="stars">★★★★★</div><p>“Compré el pack de 3 porque quería seguir la rutina sin quedarme sin producto.”</p><div class="review-author"><div><b>Sara L.</b><br><span>Zaragoza</span></div><span class="verified">Verificado</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-title"><div class="kicker">Cómo funciona el pedido</div><h2>Simple, seguro y sin pago online.</h2></div>
+        <div class="steps"><div class="step"><div class="step-num">1</div><h3>Completa el formulario</h3><p>Elige tu pack y deja tus datos de entrega.</p></div><div class="step"><div class="step-num">2</div><h3>Confirmamos por llamada</h3><p>Nuestro equipo confirma dirección y cantidad antes del envío.</p></div><div class="step"><div class="step-num">3</div><h3>Pagas al recibir</h3><p>Recibes el pedido en paquete discreto y pagas contra reembolso.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-title"><div class="kicker">Preguntas frecuentes</div><h2>Antes de pedir</h2></div>
+        <div class="faq">
+          <div class="faq-item open"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Cómo se toman?</span><span>+</span></div><div class="faq-a">Toma 2 gominolas al día, con o sin comida, como parte de tu rutina diaria.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿El envío es discreto?</span><span>+</span></div><div class="faq-a">Sí. El pedido se envía en paquete discreto, sin texto sensible visible.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Puedo pagar al recibir?</span><span>+</span></div><div class="faq-a">Sí. El pago contra reembolso está disponible. No necesitas pagar online.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Cuántas gominolas trae cada pack?</span><span>+</span></div><div class="faq-a">Cada pouch trae 60 gominolas, equivalente a 30 porciones.</div></div>
+          <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>¿Qué pack recomiendan?</span><span>+</span></div><div class="faq-a">El pack de 2 es el más popular porque permite mantener la rutina durante más tiempo y reduce el precio por pack.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section green" id="final-order">
+      <div class="wrap">
+        <div class="bottom-form">
+          <div class="bottom-head"><h2>Completa tu pedido</h2><p>Oferta disponible hoy · pago contra reembolso</p></div>
+          <div class="bottom-body">
+            <div class="offers" role="radiogroup" aria-label="Seleccionar pack final">
+              <div class="offer" data-qty="1" data-price="39.99" data-package="1 pack" onclick="selectOffer(this)"><span class="radio"></span><div><div class="offer-title">1 Pack</div><div class="offer-desc">30 días</div></div><div class="offer-price">€39.99</div></div>
+              <div class="offer active" data-qty="2" data-price="69.99" data-package="2 packs" onclick="selectOffer(this)"><div class="offer-badge">MÁS POPULAR</div><span class="radio"></span><div><div class="offer-title">2 Packs</div><div class="offer-desc">60 días</div></div><div class="offer-price">€69.99</div></div>
+              <div class="offer" data-qty="3" data-price="89.99" data-package="3 packs" onclick="selectOffer(this)"><div class="offer-badge">MEJOR VALOR</div><span class="radio"></span><div><div class="offer-title">3 Packs</div><div class="offer-desc">90 días</div></div><div class="offer-price">€89.99</div></div>
+            </div>
+            <form id="orderFormBottom" onsubmit="submitOrder(event)">
+              <div class="form-row"><input name="customer_name" placeholder="Nombre completo" required><input name="customer_phone" placeholder="Teléfono" required></div>
+              <div class="form-row"><input name="city" placeholder="Ciudad" required><input name="zip_code" placeholder="Código postal" required></div>
+              <input name="customer_address" placeholder="Dirección completa" required>
+              <button class="submit" type="submit">Confirmar pedido · Pago al recibir</button>
+              <div class="form-note">Nuestro equipo te llamará para confirmar el pedido.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><img src="images/logo.webp" alt="Vital Source Nutrition"><p>Vital Source Nutrition · Producto de bienestar femenino. Este sitio no sustituye el consejo médico profesional. Si estás embarazada, en lactancia, tomando medicación o tienes una condición médica, consulta con un profesional de salud.</p><div class="footer-links"><a href="#">Política de privacidad</a><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a></div></div>
+  </footer>
+
+  <div class="sticky-mobile"><div class="sticky-inner"><div><div class="sticky-price" id="stickyPrice">2 Packs · €69.99</div><div class="sticky-sub">Pago contra reembolso · envío discreto</div></div><button class="sticky-btn" onclick="scrollToOrder()">Pedir</button></div></div>
+
+  <div class="success-modal" id="successModal"><div class="success-box"><div class="success-icon">✅</div><h3>Pedido recibido</h3><p>Gracias. Hemos recibido tu pedido. Nuestro equipo te llamará pronto para confirmar los datos antes del envío.</p><span class="order-ref" id="orderRef">REF: VS-00000</span><br><button class="close-success" onclick="document.getElementById('successModal').style.display='none'">Cerrar</button></div></div>
+
+  <script>
+    const state = { qty: 2, price: 69.99, package: '2 packs' };
+
+    function setMainImage(btn, src){
+      document.querySelectorAll('.thumb').forEach(t=>t.classList.remove('active'));
+      btn.classList.add('active');
+      const img = document.getElementById('mainProductImage');
+      img.style.opacity = .25;
+      setTimeout(()=>{ img.src = src; img.style.opacity = 1; }, 120);
+    }
+
+    function selectOffer(el){
+      const qty = Number(el.dataset.qty);
+      document.querySelectorAll('.offer').forEach(o=>{
+        if(Number(o.dataset.qty) === qty) o.classList.add('active');
+        else o.classList.remove('active');
+      });
+      state.qty = qty;
+      state.price = Number(el.dataset.price);
+      state.package = el.dataset.package;
+      updatePrices();
+    }
+
+    function chooseBundle(qty){
+      const offer = document.querySelector(`.offer[data-qty="${qty}"]`);
+      if(offer) selectOffer(offer);
+      scrollToOrder();
+    }
+
+    function updatePrices(){
+      const p = '€' + state.price.toFixed(2);
+      const display = document.getElementById('displayPrice');
+      const sticky = document.getElementById('stickyPrice');
+      if(display) display.textContent = p;
+      if(sticky) sticky.textContent = `${state.package.replace('packs','Packs').replace('pack','Pack')} · ${p}`;
+    }
+
+    function scrollToOrder(){
+      document.getElementById('order').scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    function toggleFaq(q){
+      q.closest('.faq-item').classList.toggle('open');
+    }
+
+    function validateForm(form){
+      let ok = true;
+      form.querySelectorAll('input[required]').forEach(input=>{
+        input.classList.remove('error');
+        if(!input.value.trim()) { input.classList.add('error'); ok = false; }
+      });
+      return ok;
+    }
+
+    function collectData(form){
+      const fd = new FormData(form);
+      const ref = 'VS-' + Math.floor(10000 + Math.random()*89999);
+      return {
+        order_id: ref,
+        sku: 'PMLD-1759',
+        product: 'Vital Source Feminine Balance Gummies',
+        package: state.package,
+        quantity: state.qty,
+        price: state.price,
+        currency: 'EUR',
+        customer_name: fd.get('customer_name') || '',
+        customer_phone: fd.get('customer_phone') || '',
+        city: fd.get('city') || '',
+        zip_code: fd.get('zip_code') || '',
+        customer_address: fd.get('customer_address') || '',
+        source: window.location.href,
+        date: new Date().toISOString(),
+        status: 'New'
+      };
+    }
+
+    async function submitOrder(e){
+      e.preventDefault();
+      const form = e.target;
+      if(!validateForm(form)) return;
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Enviando pedido...';
+      const data = collectData(form);
+
+      // Pixel placeholders - we will activate later when IDs are available.
+      try { if(window.fbq) fbq('track','Purchase',{value:data.price,currency:'EUR'}); } catch(err) {}
+      try { if(window.ttq) ttq.track('Purchase',{value:data.price,currency:'EUR'}); } catch(err) {}
+
+      // Google Sheet placeholder - will work when SHEET_URL is added.
+      if(window.VITAL_CONFIG.SHEET_URL){
+        try{
+          await fetch(window.VITAL_CONFIG.SHEET_URL, {
+            method:'POST', mode:'no-cors',
+            headers:{'Content-Type':'text/plain;charset=utf-8'},
+            body: JSON.stringify(data)
+          });
+        } catch(err){ console.warn('Sheet submit warning:', err); }
+      } else {
+        console.log('Order data placeholder:', data);
+      }
+
+      document.getElementById('orderRef').textContent = 'REF: ' + data.order_id;
+      document.getElementById('successModal').style.display = 'flex';
+      form.reset();
+      btn.disabled = false;
+      btn.textContent = original;
+    }
+
+    updatePrices();
+  </script>
+</body>
+</html>
