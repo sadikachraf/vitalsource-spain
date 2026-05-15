@@ -13,11 +13,29 @@
   <script>
     window.VITAL_CONFIG = {
       SHEET_URL: 'https://script.google.com/macros/s/AKfycbxZyF_PynY2SxArtMU-T14WIOwPCnmafoy3_aJeTb1Esi2MZZ73D_lVaIqFNjYvGfI5Pg/exec',
-      META_PIXEL_ID: '',
+      META_PIXEL_ID: '1495262532174682',
       TIKTOK_PIXEL_ID: 'D2KM92JC77U9PLHEPTMG',
       GA4_ID: ''
     };
   </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1495262532174682');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1495262532174682&ev=PageView&noscript=1"/>
+  </noscript>
 
   <!-- TikTok Pixel -->
   <script>
@@ -552,7 +570,7 @@
       }
 
       // Fire pixels after the thank-you message is already visible.
-      try { if(window.fbq) fbq('track','Purchase',{value:data.price,currency:'EUR'}); } catch(err) {}
+      try { if(window.fbq) fbq('track','Purchase',{value:data.price,currency:'EUR',content_name:data.product,content_ids:[data.sku],content_type:'product',num_items:data.quantity}); } catch(err) {}
       try { if(window.ttq) ttq.track('Purchase',{value:data.price,currency:'EUR'}); } catch(err) {}
 
       // Send the final order in the background. This prevents a slow Apps Script response
