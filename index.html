@@ -277,20 +277,20 @@
 
           <div class="price-card" id="order">
             <div class="price-top">
-              <div><span class="old">€79.99</span><div class="price" id="displayPrice">€49.99</div></div>
+              <div><span class="old">€79.99</span><div class="price" id="displayPrice">€54.99</div></div>
               <div class="save">AHORRA HOY</div>
             </div>
             <div class="stock"><span class="dot"></span> Quedan pocas unidades disponibles para envío inmediato</div>
 
             <div class="offers" role="radiogroup" aria-label="Seleccionar pack">
-              <div class="offer" data-qty="1" data-price="29.99" data-package="1 pack" onclick="selectOffer(this)" role="radio" aria-checked="false">
-                <span class="radio"></span><div><div class="offer-title">1 Pack</div><div class="offer-desc">30 días · ideal para probar</div></div><div class="offer-price">€29.99</div>
+              <div class="offer" data-qty="1" data-price="34.99" data-package="1 pack" onclick="selectOffer(this)" role="radio" aria-checked="false">
+                <span class="radio"></span><div><div class="offer-title">1 Pack</div><div class="offer-desc">30 días · ideal para probar</div></div><div class="offer-price">€34.99</div>
               </div>
-              <div class="offer active" data-qty="2" data-price="49.99" data-package="2 packs" onclick="selectOffer(this)" role="radio" aria-checked="true">
-                <div class="offer-badge">MÁS POPULAR</div><span class="radio"></span><div><div class="offer-title">2 Packs</div><div class="offer-desc">60 días · mejor para rutina</div></div><div class="offer-price">€49.99</div>
+              <div class="offer active" data-qty="2" data-price="54.99" data-package="2 packs" onclick="selectOffer(this)" role="radio" aria-checked="true">
+                <div class="offer-badge">MÁS POPULAR</div><span class="radio"></span><div><div class="offer-title">2 Packs</div><div class="offer-desc">60 días · mejor para rutina</div></div><div class="offer-price">€54.99</div>
               </div>
-              <div class="offer" data-qty="3" data-price="64.99" data-package="3 packs" onclick="selectOffer(this)" role="radio" aria-checked="false">
-                <div class="offer-badge">MEJOR VALOR</div><span class="radio"></span><div><div class="offer-title">3 Packs</div><div class="offer-desc">90 días · máximo ahorro</div></div><div class="offer-price">€64.99</div>
+              <div class="offer" data-qty="3" data-price="69.99" data-package="3 packs" onclick="selectOffer(this)" role="radio" aria-checked="false">
+                <div class="offer-badge">MEJOR VALOR</div><span class="radio"></span><div><div class="offer-title">3 Packs</div><div class="offer-desc">90 días · máximo ahorro</div></div><div class="offer-price">€69.99</div>
               </div>
             </div>
 
@@ -404,7 +404,7 @@
     <div class="wrap"><img src="images/logo.webp" alt="Vital Source Nutrition"><p>Vital Source Nutrition · Producto de bienestar femenino. Este sitio no sustituye el consejo médico profesional. Si estás embarazada, en lactancia, tomando medicación o tienes una condición médica, consulta con un profesional de salud.</p><div class="footer-links"><a href="#">Política de privacidad</a><a href="#">Envíos</a><a href="#">Devoluciones</a><a href="#">Contacto</a></div></div>
   </footer>
 
-  <div class="sticky-mobile"><div class="sticky-inner"><div><div class="sticky-price" id="stickyPrice">2 Packs · €49.99</div><div class="sticky-sub">Pago contra reembolso · envío discreto</div></div><button class="sticky-btn" onclick="scrollToOrder()">Pedir</button></div></div>
+  <div class="sticky-mobile"><div class="sticky-inner"><div><div class="sticky-price" id="stickyPrice">2 Packs · €54.99</div><div class="sticky-sub">Pago contra reembolso · envío discreto</div></div><button class="sticky-btn" onclick="scrollToOrder()">Pedir</button></div></div>
 
 
   <div class="upsell-modal" id="upsellModal">
@@ -424,7 +424,7 @@
   <div class="success-modal" id="successModal"><div class="success-box"><div class="success-icon">✅</div><h3>Pedido recibido</h3><p>Gracias. Hemos recibido tu pedido. Nuestro equipo te llamará pronto para confirmar los datos antes del envío.</p><span class="order-ref" id="orderRef">REF: VS-00000</span><br><button class="close-success" onclick="document.getElementById('successModal').style.display='none'">Cerrar</button></div></div>
 
   <script>
-    const state = { qty: 2, price: 49.99, package: '2 packs' };
+    const state = { qty: 2, price: 54.99, package: '2 packs' };
     let pendingOrder = null;
     let orderSent = false;
 
